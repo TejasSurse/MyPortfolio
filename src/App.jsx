@@ -11,4 +11,4 @@ const App = () => {
 export default App;
 
 
-1.35
+1.45

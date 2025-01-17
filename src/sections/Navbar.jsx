@@ -2,6 +2,20 @@ import React from "react";
 import menuIcon from "../public/assets/menu.svg";
 import closeIcon from "../public/assets/close.svg";
 import { useState } from "react";
+import { navLinks } from "../constants";
+const NavItems = () => {
+    return (
+        <ul className="nav-ul">
+           {navLinks.map(({id, href, name}) => (
+            <li key={id} className="nav-li">
+
+            </li>
+           ))}
+        </ul>
+    )
+}
+
+
 const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false);
 
@@ -16,9 +30,14 @@ const Navbar = () => {
                     Tejas
                     </a>
                     
-                    <button onClick={toggleMenu}>
+                    <button onClick={toggleMenu} className="text-neutral-400 hover:text-white focus:outline-none sm:hidden flex" aria-label="Toggle Menu">
                         <img src={ isOpen ?  closeIcon :  menuIcon } alt="toggle" className="w-6 h-6" />
                     </button>
+
+                    <nav className="sm:flex hidden">
+                        <NavItems/>
+                    </nav>
+
                     </div>
             </div>
         </header>
